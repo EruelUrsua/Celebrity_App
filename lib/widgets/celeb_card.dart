@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class CelebCard extends StatelessWidget {
-  const CelebCard({super.key});
+final String name;
+final String tagline;
+final String imageURL;
+  const CelebCard({super.key, required this.name, required this.tagline, required this.imageURL});
 
   @override
   Widget build(BuildContext context) {
@@ -15,18 +18,18 @@ class CelebCard extends StatelessWidget {
             height: 200,
             width: 200,
             fit: BoxFit.cover,
-            image: NetworkImage('https://pbs.twimg.com/profile_images/1859537749831012352/wmpwuXsO_400x400.jpg'),
+            image: NetworkImage(imageURL),
             ),
             SizedBox(height: 20),
-            Text('Umezawa Minami ', style: TextStyle(fontSize: 24.0,
+            Text(name, style: TextStyle(fontSize: 24.0,
             fontWeight: FontWeight.w600
             ),
             textAlign: TextAlign.center,
             ),
             SizedBox(height: 5),
-            Text('Nogizaka46 Member and Group Captain ', style: TextStyle(
+            Text(tagline, style: TextStyle(
               fontSize: 16,
-              fontWeight: FontWeight.w300,
+              fontWeight: FontWeight.w300, 
             ),
               textAlign: TextAlign.center,
             ),
